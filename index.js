@@ -177,6 +177,7 @@ function Session(options) {
         // console.log('刷新session有效期', that.cookie);
         session.cookie.expires = that.cookie.expires;
         session.lastTime = lastTime.toString();
+        session.lastUrl = req.url;
 
         req.session = {};
 
