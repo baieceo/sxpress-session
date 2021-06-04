@@ -2,7 +2,7 @@ sxpress-session middleware for sxpress
 
 #### example
 
-(```)
+```javascript
 var sxpress = require('sxpress');
 var cookieParser = require('sxpress-cookie-parser');
 var session = require('sxpress-session');
@@ -18,4 +18,4 @@ app.use(
     },
   })
 );
-(```)
+```
