@@ -18,4 +18,16 @@ app.use(
     },
   })
 );
+
+app.use(function (req, res, next) {
+	req.session.account = 'baie';
+
+	next();
+});
+
+app.use(function (req, res, next) {
+	console.log(req.session);
+
+	next();
+});
 ```

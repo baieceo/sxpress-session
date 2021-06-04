@@ -103,8 +103,6 @@ function Session(options) {
     httpOnly: true,
   };
 
-  var hmac = crypto.createHmac('md5', this.secret);
-
   // 复制options中cookie配置
   if (options.cookie) {
     for (var key in options.cookie) {
@@ -200,8 +198,9 @@ function Session(options) {
         });
       }
     } else {
+      var hmac = crypto.createHmac('md5', that.secret);
       // 生成GUID
-      var id = hmac.update(GUID() + Math.random() + new Date()).digest('hex');
+      var id = hmac.update(GUID() + Math.random() + +new Date()).digest('hex');
       // console.log('cookie-session不存在');
 
       // session不存在
